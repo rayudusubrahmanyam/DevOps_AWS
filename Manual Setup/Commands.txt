@@ -1,0 +1,50 @@
+-- OS config details
+cat /etc/issue
+sudo apt update && install curl
+sudo curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo apt install nodejs -y
+sudo apt install npm -y
+nodejs -v
+
+# Docker Setup
+sudo apt-get update
+sudo apt-get install apt-transport-https
+sudo apt-get upgrade -y
+sudo apt install docker.io -y
+sudo usermod -aG docker $USER
+
+git clone https://github.com/rayudusubrahmanyam/Nodejs-Docker-Jenkins.git
+
+cd ./Nodejs-Docker-Jenkins.git
+docker build -t docker_web_app:1.0.0 .
+docker run -d -p 8099:8080 docker_web_app:1.0.0
+
+MongoDB setup
+  docker container run --name mydatabase --publish 27017:27017 -d mongo
+  docker container exec -it mydatabase bash
+
+#!/bin/bash
+sudo apt update
+sudo apt install openjdk-8-jdk -y
+sudo apt install maven git wget unzip -y
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins -y
+
+sudo usermod -aG docker jenkins
+sudo gpasswd -a jenkins docker
+sudo setfacl -m user:jenkins:rw /var/run/docker.sock
+
+
+
+
+
+
+
+
+
+
+
+
+

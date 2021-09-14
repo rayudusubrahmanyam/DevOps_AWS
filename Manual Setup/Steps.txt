@@ -1,0 +1,30 @@
+# AWS Setup
+1) VPC -> demo-app-vpc (10.0.0.0/16)
+   enable DNS hostnames
+2) Internet Gateway -demo-app-igw
+3) Attach vpc to igw
+4) Create subnets - demo-app-subnet-1(10.0.1.0/24) & demo-app-subnet-2(10.0.2.0/24)
+   enable public ip allocation
+5) Attach subnet 1 to default route table and add rule like 0.0.0.0/0 -> igw 
+6) create new route table in subnet -1 and assign subnet 2 to it. Add new route rule to 0.0.0.0/0 to NAT IGW
+7) create new key pair - demo-app-key
+8) create security-group  - demo-app-sg
+9) Create webserver ec2 instace and configure below softwares
+    Docker
+    Node
+    checkout GIT repo
+    run sample node app
+10) Create load Balancer and target groups
+    demo-app-alb-1436616794.ap-south-1.elb.amazonaws.com
+11) Create DB Server ec2 instace and configure below softwares
+    Docker
+    Node
+    Run mongoDB container
+12) Connect MongoDB & NodeJS servers
+13) Test  -- pending
+14) Create Jenkins Server 
+15) Build CI/CD Pipeline
+
+    
+
+
