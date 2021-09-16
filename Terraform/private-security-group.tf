@@ -1,4 +1,3 @@
-/*
 resource "aws_security_group" "demo-develop-private-sg" {
    vpc_id = aws_vpc.demo-develop-vpc.id
 
@@ -13,5 +12,3 @@ resource "aws_security_group" "demo-develop-private-sg" {
     Name = "${var.TAGNAME}-private-sg"
   }
 }
-
-*/

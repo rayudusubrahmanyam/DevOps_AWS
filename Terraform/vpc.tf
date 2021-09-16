@@ -52,7 +52,7 @@ resource "aws_default_route_table" "demo-develop-main-rtb" {
   }
 }
 
-/*
+
 resource "aws_route_table" "demo-develop-private-rtb" {
   vpc_id = aws_vpc.demo-develop-vpc.id
   
@@ -65,7 +65,7 @@ resource "aws_route_table_association" "a-route-subnet" {
   subnet_id = aws_subnet.demo-develop-subnet-2.id
   route_table_id = aws_route_table.demo-develop-private-rtb.id
 }
-*/
+
 
 
 
