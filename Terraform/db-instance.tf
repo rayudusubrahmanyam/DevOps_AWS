@@ -1,3 +1,4 @@
+/*
 resource "aws_instance" "demo-develop-DBserver" {
   ami                         = var.AMIS[var.REGION-ID]
   instance_type               = var.INSTANCE-TYPE
@@ -7,7 +8,6 @@ resource "aws_instance" "demo-develop-DBserver" {
   vpc_security_group_ids      = [aws_security_group.demo-develop-private-sg.id]
   availability_zone			      = var.AVAIL-ZONE-2
 
-/*
   user_data = <<-EOF
   #!/bin/bash
   cat /etc/issue
@@ -28,10 +28,12 @@ resource "aws_instance" "demo-develop-DBserver" {
   sudo docker build -t docker_web_app:1.0.0 .
   sudo docker run -d -p 8080:8080 docker_web_app:1.0.0
   EOF   
-*/
+
   tags = {
   Name = "demo-develop-DBserver"
   }
 
 }
+
+*/
 

@@ -31,10 +31,12 @@ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key 
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt-get update
 sudo apt-get install jenkins -y
-
 sudo usermod -aG docker jenkins
 sudo gpasswd -a jenkins docker
 sudo setfacl -m user:jenkins:rw /var/run/docker.sock
+
+
+/var/lib/docker/volumes/jenkins_home/_data/secrets
 
 
 
