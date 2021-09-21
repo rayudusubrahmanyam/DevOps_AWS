@@ -2,5 +2,3 @@
 *.tfstate
 *.tfstate.*
 dev-vars.tfvars
-*.txt
-*.doc

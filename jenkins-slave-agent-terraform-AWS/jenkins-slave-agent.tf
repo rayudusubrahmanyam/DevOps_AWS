@@ -1,4 +1,4 @@
-resource "aws_instance" "jenkins-server" {
+resource "aws_instance" "jenkins-slave-agent" {
   ami                         = var.AMIS[var.REGION-ID]
   instance_type               = var.INSTANCE-TYPE
   key_name                    = "my-webapp-key"
@@ -7,8 +7,8 @@ resource "aws_instance" "jenkins-server" {
   #vpc_security_group_ids      = [aws_default_security_group.demo-develop-default-sg.id]
   availability_zone			      = var.AVAIL-ZONE-1
 
-  user_data = file("jenkins-server-configuration-setup.sh")
+  user_data = file("jenkins-slave-configuration-setup.sh")
   tags = {
-  Name = "jenkins-server"
+  Name = "jenkins-slave-agent"
   }
 }

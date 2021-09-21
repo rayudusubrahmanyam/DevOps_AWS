@@ -32,3 +32,4 @@ sudo apt-get update && sudo apt-get install elasticsearch
  sudo systemctl start elasticsearch.service
 
 
+sudo service logstash restart

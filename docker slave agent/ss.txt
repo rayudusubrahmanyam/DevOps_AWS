@@ -1,5 +1,0 @@
-Jenkins
-SonarQube
-AWS
-DOCKER
-K8S

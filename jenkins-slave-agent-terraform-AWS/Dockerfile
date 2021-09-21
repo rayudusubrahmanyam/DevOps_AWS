@@ -14,6 +14,10 @@ RUN apt-get update && \
     apt-get install -qy openjdk-8-jdk && \
 # Install maven
     apt-get install -qy maven && \
+# Install Node & NPM
+    apt update && install curl && \
+    curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh && \
+    apt install nodejs -qy && apt install npm -qy  && \  
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
@@ -21,6 +25,7 @@ RUN apt-get update && \
 # Set password for the jenkins user (you may want to alter this).
     echo "jenkins:jenkins" | chpasswd && \
     mkdir /home/jenkins/.m2
+
 
 #ADD settings.xml /home/jenkins/.m2/
 # Copy authorized keys
