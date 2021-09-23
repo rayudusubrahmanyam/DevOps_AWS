@@ -1,0 +1,19 @@
+sudo yum install postgresql96 postgresql96-server #this is a one time command
+sudo service postgresql96 initdb
+sudo service postgresql96 start
+sudo passwd postgres
+su — postgres
+psql
+
+CREATE USER sonar WITH ENCRYPTED PASSWORD ‘sonar_password’;
+CREATE DATABASE sonarqube;
+GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar; #Don’t exit from psql shell
+
+SHOW hba_file; #inside psql shell
+## default output
+/var/lib/pgsql96/data/pg_hba.conf #$HBA_FILE_PATH
+
+\q #exit from psql shell
+exit #exit from postgres user bash
+
+sudo nano $HBA_FILE_PATH
